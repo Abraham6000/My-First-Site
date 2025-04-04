@@ -1,1 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden; /* Disable horizontal scroll */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: #444;
+            color: white;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ff6600;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Adding smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Services Section */
+        .services, .about, .artworks, .contact, .fiverr {
+            padding: 50px 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .service-card {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            background: #333;
+            color: white;
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        .artwork-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background: #ff6600;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleUp {
+            from {
+                transform: scale(0.9);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .hero {
+                padding: 50px 10px;
+            }
+            .cta-button {
+                width: 100%;
+                padding: 15px;
+            }
+            .artwork-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Spinner */
+        #spinner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+        }
+
+        #spinner .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #ff6600;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Loading Spinner -->
+    <div id="spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <header>
+        <div class="logo">A</div>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#fiverr">Fiverr Profile</a></li>
+                <li><a href="#artworks">Artworks</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Multidisciplinary Creative Professional</h1>
+            <a href="#services" class="cta-button">Explore My Services</a>
+        </div>
+    </section>
+    
+    <section id="services">
+        <h2 class="services-title">My Services</h2> 
+        <div class="services-container">
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Logo Design</h3>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎥</div>
+                <h3>AI Video Creator</h3>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🖼️</div>
+                <h3>Image Editing</h3>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>Website Developer</h3>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Architecture</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>Passionate about creative design and technology, I offer a range of services...</p>
+    </section>
+    
+    <section id="artworks" class="artworks">
+        <h2>My Artworks</h2>
+        <div class="artwork-gallery">
+            <div class="artwork"><img src="art1.jpg" alt="Abstract logo design artwork 1"></div>
+            <div class="artwork"><img src="art2.jpg" alt="Logo design concept artwork 2"></div>
+            <div class="artwork"><img src="art3.jpg" alt="Architectural design sketch artwork 3"></div>
+            <div class="artwork"><img src="art4.jpg" alt="Minimalistic branding design artwork 4"></div>
+            <div class="artwork"><img src="art5.jpg" alt="Corporate identity design artwork 5"></div>
+            <div class="artwork"><img src="art6.jpg" alt="Creative logo with mascot design artwork 6"></div>
+            <div class="artwork"><img src="art7.jpg" alt="Typography-based logo design artwork 7"></div>
+            <div class="artwork"><img src="art8.jpg" alt="Modern vintage logo design artwork 8"></div>
+            <div class="artwork"><img src="art9.jpg" alt="Classic wordmark logo design artwork 9"></div>
+            <div class="artwork"><img src="art10.jpg" alt="Logo with geometric shapes design artwork 10"></div>
+            <div class="artwork"><img src="art11.jpg" alt="Custom lettering logo design artwork 11"></div>
+            <div class="artwork"><img src="art18.jpg" alt="Creative architectural design artwork 18"></div>
+            <div class="artwork"><img src="art19.jpg" alt="Interior design architectural concept artwork 19"></div>
+            <div class="artwork"><img src="art20.jpg" alt="Outdoor architecture design artwork 20"></div>
+            <div class="artwork"><img src="/art21.jpg" alt="Futuristic building design artwork 21"></div>
+            <div class="artwork"><img src="art22.jpg" alt="Sustainable architecture project artwork 22"></div>
+            <div class="artwork"><img src="art23.jpg" alt="Creative space design for workspace artwork 23"></div>
+            <div class="artwork">
+                <video controls>
+                    <source src="video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="artwork">
+        </div>
+    </section>
+    
+    
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form
+          id="contact-form"
+          class="contact-form"
+          action="https://formspree.io/f/xdkewyjl"
+          method="POST"
+        >
+            <input type="text" name="name" id="name" placeholder="Name" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    
+    <section id="fiverr" class="fiverr">
+        <h2>My Fiverr Profile</h2>
+        <iframe src="https://www.fiverr.com/@lord_of_design1
+
+        " frameborder="0"></iframe>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Kwaku Evans. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hide the loading spinner after 1.5 seconds
+        window.addEventListener('load', () => {
+            document.getElementById('spinner').style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>
 

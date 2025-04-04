@@ -1,0 +1,85 @@
+/* Center and style "My Services" heading */
+.services-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Services Container - Horizontal Layout */
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+/* Service Cards - Stylish & Professional */
+.service-card {
+    background: #1e1e1e; /* Dark background for ArtStation-like design */
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px; /* Smooth rounded corners */
+    text-align: center;
+    width: 200px; /* Fixed width for uniformity */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Icons */
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+#form-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: green;
+}
+.artwork-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.artwork img, .artwork video {
+    width: 100%;
+    border-radius: 10px;
+}
