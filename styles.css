@@ -1,4 +1,12 @@
-/* Center and style "My Services" heading */
+/* General Responsive Reset */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Center and style "My Services" heading */ 
 .services-title {
     text-align: center;
     font-size: 2em;
@@ -6,25 +14,27 @@
     color: #ffffff;
 }
 
-/* Services Container - Horizontal Layout */
+/* Services Container - Responsive Layout */
 .services-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
     padding: 40px 20px;
 }
 
-/* Service Cards - Stylish & Professional */
+/* Service Cards - Stylish & Responsive */
 .service-card {
-    background: #1e1e1e; /* Dark background for ArtStation-like design */
+    background: #1e1e1e;
     color: #fff;
     padding: 20px;
-    border-radius: 15px; /* Smooth rounded corners */
+    border-radius: 15px;
     text-align: center;
-    width: 200px; /* Fixed width for uniformity */
+    width: 100%;
+    max-width: 250px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    flex-grow: 1;
 }
 
 .service-card:hover {
@@ -37,17 +47,20 @@
     font-size: 40px;
     margin-bottom: 10px;
 }
+
+/* Contact Form - Responsive */
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
     max-width: 500px;
-    margin: auto;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .contact-form input,
 .contact-form textarea {
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -72,14 +85,38 @@
     font-size: 14px;
     color: green;
 }
+
+/* Artwork Gallery - Grid + Responsive Media */
 .artwork-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
-.artwork img, .artwork video {
+.artwork img,
+.artwork video {
     width: 100%;
+    height: auto;
     border-radius: 10px;
+    object-fit: cover;
+}
+
+/* === Mobile First Media Query (optional tweaks) === */
+@media (max-width: 600px) {
+    .services-title {
+        font-size: 1.5em;
+    }
+
+    .service-icon {
+        font-size: 32px;
+    }
+
+    .contact-form {
+        padding: 0 10px;
+    }
+
+    .service-card {
+        max-width: 100%;
+    }
 }
